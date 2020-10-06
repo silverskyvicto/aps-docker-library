@@ -18,15 +18,15 @@ spec:
               value: alfresco
             - name: POSTGRES_PASSWORD
               value: alfresco
-          image: postgres:9.6.2
+          image: postgres:11.6-alpine
         - name: elasticsearch
-          image: elasticsearch:1.7.3
+          image: elasticsearch:7.6.2
         - name: process-services
           env:
             - name: ACTIVITI_CORS_ENABLED
-              value: 'true'
+              value: "true"
             - name: ACTIVITI_CSRF_DISABLED
-              value: 'true'
+              value: "true"
             - name: ACTIVITI_DATASOURCE_PASSWORD
               value: alfresco
             - name: ACTIVITI_DATASOURCE_USERNAME
@@ -36,7 +36,7 @@ spec:
             - name: ACTIVITI_HIBERNATE_DIALECT
               value: org.hibernate.dialect.PostgreSQLDialect
             - name: ACTIVITI_DATASOURCE_URL
-              value: 'jdbc:postgresql://127.0.0.1:5432/activiti?characterEncoding=UTF-8'
+              value: "jdbc:postgresql://127.0.0.1:5432/activiti?characterEncoding=UTF-8"
             - name: ACTIVITI_ES_SERVER_TYPE
               value: client
             - name: ACTIVITI_ES_DISCOVERY_HOSTS
