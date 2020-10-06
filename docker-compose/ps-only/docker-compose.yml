@@ -1,12 +1,12 @@
-version: '2'
+version: "3"
 
 services:
   process:
-    image: alfresco/process-services:1.6.2
+    image: alfresco/process-services:1.11.0
     environment:
-      ACTIVITI_CSRF_DISABLED: 'true'
-      ACTIVITI_CORS_ENABLED: 'true'
+      ACTIVITI_CSRF_DISABLED: "true"
+      ACTIVITI_CORS_ENABLED: "true"
     #volumes:
     # - "~/.activiti/enterprise-license:/root/.activiti/enterprise-license/:ro"
     ports:
-    - 9999:8080
+      - 9999:8080

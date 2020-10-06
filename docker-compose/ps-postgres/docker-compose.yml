@@ -1,26 +1,26 @@
-version: '2'
+version: "3"
 
 services:
   process:
-    image: alfresco/process-services:1.6.2
+    image: alfresco/process-services:1.11.0
     environment:
       ACTIVITI_DATASOURCE_USERNAME: alfresco
       ACTIVITI_DATASOURCE_PASSWORD: alfresco
       ACTIVITI_DATASOURCE_DRIVER: org.postgresql.Driver
       ACTIVITI_HIBERNATE_DIALECT: org.hibernate.dialect.PostgreSQLDialect
-      ACTIVITI_DATASOURCE_URL: 'jdbc:postgresql://postgres:5432/activiti?characterEncoding=UTF-8'
-      ACTIVITI_CSRF_DISABLED: 'true'
-      ACTIVITI_CORS_ENABLED: 'true'
+      ACTIVITI_DATASOURCE_URL: "jdbc:postgresql://postgres:5432/activiti?characterEncoding=UTF-8"
+      ACTIVITI_CSRF_DISABLED: "true"
+      ACTIVITI_CORS_ENABLED: "true"
     #volumes:
     # - "~/.activiti/enterprise-license:/root/.activiti/enterprise-license/:ro"
     ports:
-    - 9999:8080
+      - 9999:8080
     links:
       - postgres:postgres
     depends_on:
       - postgres
   postgres:
-    image: postgres:9.6.2
+    image: postgres:11.6-alpine
     environment:
       POSTGRES_DB: activiti
       POSTGRES_USER: alfresco
